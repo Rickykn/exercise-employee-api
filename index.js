@@ -34,6 +34,13 @@ app.get("/employees/:employeeId", (req, res) => {
     return val.id == employeeId;
   });
 
+  if (!findEmployee) {
+    res.status(404).json({
+      message: "employee not found",
+    });
+    return;
+  }
+
   res.status(200).json({
     message: "fetch success",
     result: findEmployee,
