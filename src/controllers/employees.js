@@ -132,10 +132,7 @@ const employeeControllers = {
       });
 
       if (findIdx == -1) {
-        res.status(404).json({
-          message: "Employee not found",
-        });
-        return;
+        continue;
       }
       employeeDB.splice(findIdx, 1);
     }
@@ -155,10 +152,7 @@ const employeeControllers = {
       });
 
       if (findIdx == -1) {
-        res.status(404).json({
-          message: "Employee not found",
-        });
-        return;
+        continue;
       }
       employeeDB[findIdx] = {
         ...employeeDB[findIdx],
